@@ -1,0 +1,39 @@
+<!-- seperation of censern -->
+<!-- Program having any button -- so we are using addEventListerner -->
+
+<html>
+
+<head>
+    <title>Character Word Counter</title>
+    <link rel="stylesheet" href="stylesheet1.css">
+</head>
+
+<body>
+    <center>
+        <h1>Character Word Counter</h1>
+        <form>
+            <label>Enter string:</label> <br />
+            <textarea name="textarea1" id="firstSequence" cols="30" rows="5" placeholder="Enter string: "></textarea>
+        </form>
+        <h2 id="msg"></h2>
+        <script>
+            let text = document.getElementById("firstSequence");
+            let message = document.getElementById("msg");
+
+            let letterCount = 0;
+            let wordCount = 0;
+
+            text.addEventListener("input", function () {
+                txt = text.value.trim();
+                letterCount = txt.split(" ").join("").length;
+                (letterCount == 0) ? wordCount = 0 : wordCount = txt.split(" ").length;
+
+                message.innerHTML = "Character/Letter Count: " + letterCount + " \nWord Count: " + wordCount;
+            })
+
+        </script>
+    </center>
+</body>
+
+
+</html>
